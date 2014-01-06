@@ -8,7 +8,6 @@ django-storages==1.1.8
 django-toolbelt==0.0.1
 gunicorn==18.0
 psycopg2==2.5.1
-py-mysql2pgsql==0.1.6
 pytz==2013.9
 static==0.4
 termcolor==1.1.0
