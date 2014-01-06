@@ -1,7 +1,7 @@
 from fabric.api import local
 
 def deploy():
- local('pip freeze > requirements.txt')
+ #local('pip freeze > requirements.txt')
  local('git add .')
  print("enter your git commit comment: ")
  comment = raw_input()
