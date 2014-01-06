@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/static/css/homepage.css" rel="stylesheet">
+<link rel='icon' type='image/ico' href='/static/images/musicnote-favicon.ico'>
+<title>Peter Manheim - Drummer, Percussionist, Educator</title>
+<meta content="The website of jazz musician Peter Manheim. Peter is a versatile drummmer, percussionist, and educator living in Chicago, IL. Find information on Peter's music, shows, and upcoming tour dates here." name="description"></meta>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id='ul'>
+<span id='head'>Peter Manheim</span><br>
+<span id='sub'>Drummer, Percussionist, Educator</span>
+</div>
+<div id='slider-container' style='margin-top:25px;'>
+<div id='slider'>
+<div class='tab' id='aboutTab'>
+<b>About</b><br><br>
+Peter Manheim is a drummer and percussionist from Evanston, Illinois. In 2012, he completed his bachelors degree in music at Oberlin Conservatory. While at school, he was fortunate to study with drumming masters Billy Hart and Jamey Haddad, both of whom became extremely important mentors to him.  Upon completing school, Peter moved to Brazil, where he spent six months traveling, performing, and studying Brazilian drums and percussion.<br><br>
+Peter is currently based in Chicago where he performs regularly in a variety of music styles. Peter tours nationally and internationally with bands including <a href='http://www.organyank.com' style='color:white;text-decoration:none;' target='_blank'><b>Organ Yank</b></a>, <a href='http://www.samuelmoesching.com/trio' style='color:white;text-decoration:none;' target='_blank'><b>The New Samuel M&#246sching Trio</b></a>, and <a href='http://www.thcjazz.com' style='color:white;text-decoration:none;' target='_blank'><b>The Terry Hsieh Collective</b></a>. 
+</p>
+</div>
+<div class='tab' id='liveTab'>
+<b>Live</b><br><br>
+
+<div id='upcoming-gigs'>
+{% for gig in gigs %}
+    <div class='gig' data-date='{{ gig.epoch }}'>
+    <b><a target='_blank' href='{{ gig.website }}' style='text-decoration: none; color:white;'>{{ gig.venue }}</a></b><br>
+    {{ gig.date }}<br>
+    {{ gig.location }}<br>
+    <i>{{ gig.band }}</i><br><br>
+    </div>
+{% endfor %}
+</div>
+<br><b>-- Past --</b><br><br>
+<div id='past-gigs'>
+</div>
+</div>
+<div class='tab' id='contactTab'>
+<b>Contact</b><br><br>
+<table>
+<tr><td><i>email</i></td><td>peter.manheim@gmail.com</td></tr>
+<tr><td><i>phone</i></td><td>847.942.2493</td></tr>
+</table>
+</div>
+<div class='tab' id='linksTab'>
+<b>Links</b><br><br>
+<a href='http://www.organyank.com' style='color:white;' target='_blank'>Organ Yank</a><br>
+<a href='http://www.samuelmoesching.com/trio' style='color:white;' target='_blank'>Samuel M&#246esching Trio</a><br>
+<a href='http://www.thcjazz.com' style='color:white;' target='_blank'>Terry Hsieh Collective</a><br>
+<a href='http://viewersof.bandcamp.com/' style='color:white;' target='_blank'>Viewers Of</a><br>
+<a href='http://www.williammillermusic.com' style='color:white;' target='_blank'>Will Miller Music</a><br>
+<a href='http://www.gregoryuhlmann.com' style='color:white;' target='_blank'>Gregory Uhlmann Music</a><br>
+<a href='http://www.mattgoldmusic.com' style='color:white;' target='_blank'>Matt Gold Guitar</a><br>
+<a href='http://www.roomstrio.com' style='color:white;' target='_blank'>Rooms Trio</a><br>
+<a href='http://www.dalerothenberg.com' style='color:white;' target='_blank'>Dale Rothenberg Photography</a>
+</div>
+</div>
+</div>
+<div id='bl'>
+<div id='tabs'>
+<span id='about'>About</span><br>
+<span id='live'>Live</span><br>
+<span id='contact'>Contact</span><br>
+<span id='links'>Links</span><br>
+</div>
+<a href="mailto:peter.manheim@gmail.com"><img src='/static/images/email-icon.png' width='36px' height='36px'></img></a>
+<a href="http://www.facebook.com/peter.manheim" target="_blank"><img src='/static/images/facebook-icon.png' width='36px' height='36px'></img></a>
+<a href="http://www.linkedin.com/pub/peter-manheim/36/93/682" target="_blank"><img src='/static/images/linkedin-icon.png' width='36px' height='36px'></img></a>
+<a href="http://www.soundcloud.com/peter-manheim" target="_blank"><img src='/static/images/soundcloud-icon.png' width='36px' height='36px'></img></a>
+</div>
+</div>
+</body>
+</html>
+
+<script type='text/javascript' src='/static/js/jquery-latest.min.js'></script>
+<script src="/static/js/main.js"></script>

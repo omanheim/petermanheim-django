@@ -1,0 +1,42 @@
+#container
+{
+    top: 20%;
+}
+table 
+{
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td
+{
+    border: 1px solid black;
+}
+td, th
+{
+    padding: 6px;
+}
+table#signin-table
+{
+    border: 1px solid black;
+}
+table#signin-table td
+{
+    border: none;
+}
+tr
+{
+    background-color: rgb(255,229,208);
+}
+tr.label, th
+{
+    background-color: rgb(240,156,91);
+}
+table#add-gig-table
+{
+    min-width: 300px;
+}
+input
+{
+    width: 90%;
+    margin-right: 6px;
+}

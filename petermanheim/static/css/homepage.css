@@ -1,0 +1,41 @@
+html {
+     background: url("../images/whitet.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     -o-background-size: cover;
+    background-size: cover;
+}
+html {
+    font-family: "Poiret One", cursive;
+}
+#head {
+    font-size: 55px;
+    color: white;
+}
+#sub {
+    font-size: 31px;
+    color: white;
+}
+#slider {
+    display: none;
+    margin-top: 25px;
+    background-color: rgba(18,19,32,0.94);
+    border: 1px solid white;
+    padding: 12px;
+    color: white;
+    max-width: 98%;
+    overflow: scroll;
+}
+#bl {
+    position: absolute;
+    bottom: 5px;
+    color: white;
+}
+#tabs {
+    font-size: 25px;
+    margin-bottom: 13px;
+}
+table td {
+    color: white;
+    padding-right: 12px;
+}
