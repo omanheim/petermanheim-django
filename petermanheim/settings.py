@@ -134,6 +134,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'storages',
+    'boto',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -185,3 +187,11 @@ try:
     from local_settings import *
 except Exception as e:
     pass
+
+if not DEBUG:
+    AWS_STORAGE_BUCKET_NAME = os.environ['petermanheim']
+    AWS_ACCESS_KEY_ID = os.environ['AKIAJ4KFWGG54GGQPRGQ']
+    AWS_SECRET_ACCESS_KEY = os.environ['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']
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+    STATIC_URL = S3_URL

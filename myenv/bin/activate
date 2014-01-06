@@ -78,3 +78,8 @@ alias pydoc="python -m pydoc"
 if [ -n "$BASH" -o -n "$ZSH_VERSION" ] ; then
     hash -r 2>/dev/null
 fi
+
+# s3 deployment info
+export AWS_STORAGE_BUCKET_NAME=petermanheim
+export AWS_ACCESS_KEY=AKIAJ4KFWGG54GGQPRGQ
+export AWS_SECRET_ACCESS_KEY=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
