@@ -28,10 +28,10 @@
 <div id='view-gigs' style='display:none;'>
 <button id='add'>Add Gig</button>
 <table id='gig-table' style='min-width:400px;'>
-<tr class='headers'><th>Venue</th><th>Date</th><th>Location</th><th>Group</th>
+<tr class='headers'><th>Venue</th><th>Date</th><th>Location</th><th>Group</th><th>Remove</th>
 {% if gigs %}
 {% for gig in gigs %}
-    <tr><td>{{ gig.venue }}</td><td class="gig-time" data-epoch='{{ gig.epoch }}'>{{ gig.date }}</td><td>{{ gig.location }}</td><td>{{ gig.band }}</td>
+    <tr data-id='{{ gig.id }}'><td>{{ gig.venue }}</td><td class="gig-time" data-epoch='{{ gig.epoch }}'>{{ gig.date }}</td><td>{{ gig.location }}</td><td>{{ gig.band }}</td><td class='remove-gig'><b>X</b></td>
 {% endfor %}
 {% else %}
     <tr id='no-gigs'><td colspan=4>No gigs</td></tr>

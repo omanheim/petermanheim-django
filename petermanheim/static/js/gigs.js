@@ -16,6 +16,13 @@ $(document).on('click', '#add', function() {
     $('#add-gig').show();
 });
 
+$(document).on('click', '.remove-gig', function() {
+    var id = $(this).closest('tr').data('id');
+    $.post('/removeGig', {'id': id}, function() {
+        $('tr[data-id='+id+']').detach();
+    });
+});
+
 $(document).on('click', '#submit-gig', function() {
     var retry = false;
     $('.required').each(function() {
@@ -36,7 +43,7 @@ $(document).on('click', '#submit-gig', function() {
     data.group = $('#group').val();
     $.post('/addGig', data, function(gigjson) {
         gig = $.parseJSON(gigjson);
-        var gigline = '<tr><td>' +  gig.venue + '</td><td class="gig-time" data-epoch=' + gig.epoch  + '>' + gig.date + '</td><td>' + gig.location + '</td><td>' + gig.group + '</td>';
+        var gigline = '<tr data-id=' + gig.id + '><td>' +  gig.venue + '</td><td class="gig-time" data-epoch=' + gig.epoch  + '>' + gig.date + '</td><td>' + gig.location + '</td><td>' + gig.group + '</td><td class="remove-gig"><b>X</b></td>';
         $('#gig-table').append(gigline);
         $('#no-gigs').hide();
         sortGigs();

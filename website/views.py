@@ -51,7 +51,8 @@ def addGig(request):
     date_time = str(date) + ' ' + str(time)
     gig = Gig(venue=venue, website=website, date=date_time, location=location, band=group)
     gig.save()
-    gigResponse = {'venue': venue,
+    gigResponse = {'id': gig.id,
+                   'venue': venue,
                    'website': website,
                    'location': location,
                    'group': group}
@@ -63,6 +64,11 @@ def addGig(request):
         gigResponse['date'] = datetime.strftime(dateobj,'%b %d,  %I:%M %p')
     gigResponse['epoch'] = calendar.timegm(dateobj.utctimetuple())
     return HttpResponse(json.dumps(gigResponse))
+
+def removeGig(request):
+    id = request.POST['id']
+    gig = Gig.objects.get(pk=id).delete()
+    return HttpResponse()
 
 def signin(request):
     password = request.POST['password']
