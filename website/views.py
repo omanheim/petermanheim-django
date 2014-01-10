@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+import random
 import calendar
 
 from website.models import *
@@ -20,7 +21,9 @@ def index(request):
             d = datetime.strftime(gig.date, '%d').lstrip('0')
             tm = datetime.strftime(gig.date, '%I:%M %p').lstrip('0')
             gig.date = m + '/' + d + ' | ' + tm
-    return render(request, 'homepage.html', {'gigs': gigs})
+    rand = random.randint(1,2)
+    backgroundImage = "/static/images/whitet.jpg" if rand == 1 else "/static/images/noblur.jpg"
+    return render(request, 'homepage.html', {'gigs': gigs, 'bgimg': backgroundImage})
 
 def gigs(request):
     gigs = Gig.objects.all()
