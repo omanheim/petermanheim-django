@@ -16,6 +16,18 @@ $(document).on('click', '#add', function() {
     $('#add-gig').show();
 });
 
+$(document.on('click', '#edit-news-btn', function() {
+  $('#view-gigs').hide();
+  $('#edit-news').show();
+});
+
+$(document).on('click', '#save-news', function() {
+  $.post('/saveNews', {'news': $('#news-content').text()}, function() {
+    $('#edit-news').hide();
+    $('#view-gigs').show();
+  });
+});
+
 $(document).on('click', '.remove-gig', function() {
     var id = $(this).closest('tr').data('id');
     $.post('/removeGig', {'id': id}, function() {

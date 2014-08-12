@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^gigs$', views.gigs, name='gigs'),
     url(r'^addGig$', views.addGig, name='addGig'),
     url(r'^removeGig$', views.removeGig, name='removeGig'),
+    url(r'^saveNews$', views.saveNews, name='saveNews'),
     url(r'^signin$', views.signin, name='signin'),
     #url(r'^.*', views.view404, name='404'),
 )

@@ -24,7 +24,8 @@ def index(request):
     rand = random.randint(1,2)
     gigs = sorted(gigs, key=lambda gig: gig.epoch)
     backgroundImage = "/static/images/whitet.jpg" if rand == 1 else "/static/images/noblur.jpg"
-    return render(request, 'homepage.html', {'gigs': gigs, 'bgimg': backgroundImage})
+    news = News.objects.all()[:1].news
+    return render(request, 'homepage.html', {'gigs': gigs, 'bgimg': backgroundImage, 'news': news})
 
 def gigs(request):
     gigs = Gig.objects.all()
@@ -37,7 +38,8 @@ def gigs(request):
             gig.date = datetime.strftime(gig.date, '%b %d')
         else:
             gig.date = datetime.strftime(gig.date, '%b %d,  %I:%M %p')
-    return render(request, 'gigs.html', {'gigs': gigs})
+    news = News.objects.all()[:1].news
+    return render(request, 'gigs.html', {'gigs': gigs, 'news': news})
 
 def addGig(request):
     venue = request.POST['venue']
@@ -72,6 +74,12 @@ def addGig(request):
 def removeGig(request):
     id = request.POST['id']
     gig = Gig.objects.get(pk=id).delete()
+    return HttpResponse()
+
+def saveNews(request):
+    news = News.objects.all()[:1].news
+    news.news = request.POST['news']
+    news.save()
     return HttpResponse()
 
 def signin(request):

@@ -27,6 +27,7 @@
 
 <div id='view-gigs' style='display:none;'>
 <button id='add'>Add Gig</button>
+<button id='edit-news-btn'>Edit News</button>
 <table id='gig-table' style='min-width:400px;'>
 <tr class='headers'><th>Venue</th><th>Date</th><th>Location</th><th>Group</th><th>Remove</th>
 {% if gigs %}
@@ -55,6 +56,11 @@
 <tr class='input'><td><input class='required' id='group' type='text' placeholder='Jam Session with Andrew Lawrence Quartet'></td></tr>
 </table>
 <button id='submit-gig' style='width:100%; height:30px;'>Submit</button>
+</div>
+
+<div id='edit-news' style='display:none;'>
+<div contenteditable=true id='news-content'>{{ news }}</div>
+<button id='save-news'>Save</button>
 </div>
 
 </div>
