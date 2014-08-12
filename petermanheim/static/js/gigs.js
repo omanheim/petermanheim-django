@@ -16,7 +16,7 @@ $(document).on('click', '#add', function() {
     $('#add-gig').show();
 });
 
-$(document.on('click', '#edit-news-btn', function() {
+$(document).on('click', '#edit-news-btn', function() {
   $('#view-gigs').hide();
   $('#edit-news').show();
 });
