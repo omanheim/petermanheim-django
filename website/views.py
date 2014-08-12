@@ -24,7 +24,7 @@ def index(request):
     rand = random.randint(1,2)
     gigs = sorted(gigs, key=lambda gig: gig.epoch)
     backgroundImage = "/static/images/whitet.jpg" if rand == 1 else "/static/images/noblur.jpg"
-    news = News.objects.all()[:1].news
+    news = News.objects.get(pk=1).news
     return render(request, 'homepage.html', {'gigs': gigs, 'bgimg': backgroundImage, 'news': news})
 
 def gigs(request):
