@@ -79,7 +79,7 @@
   var news = '{{ news }}';
   window.addEventListener('load', function() {
     var decodedNews = decodeURIComponent(news);
-    document.getElementById('newsTab').innerText = decodedNews;
+    document.getElementById('newsTab').innerHTML = decodedNews;
   });
 </script>
 
