@@ -76,13 +76,8 @@ def removeGig(request):
     gig = Gig.objects.get(pk=id).delete()
     return HttpResponse()
 
-def newNews(request):
-    news = News(news="")
-    news.save()
-    return HttpResponse()
-
 def saveNews(request):
-    news = News.objects.all()[:1].news
+    news = News.objects.get(pk=1)
     news.news = request.POST['news']
     news.save()
     return HttpResponse()
