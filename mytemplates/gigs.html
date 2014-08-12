@@ -59,7 +59,7 @@
 </div>
 
 <div id='edit-news' style='display:none;'>
-<div contenteditable=true style='padding:15px; border: 1px dotted black;' id='news-content'>{{ news }}</div>
+<div contenteditable=true style='padding:15px; border: 1px dotted black;' id='news-content'></div>
 <button id='save-news'>Save</button>
 </div>
 
@@ -69,4 +69,11 @@
 </body>
 <script type='text/javascript' src='/static/js/jquery-latest.min.js'></script>
 <script src="/static/js/gigs.js"></script>
+<script>
+  var news = '{{ news }}';
+  window.addEventListener('load', function() {
+    var decodedNews = decodeURIComponent(news);
+    document.getElementById('news-content').innerText = decodedNews;
+  });
+</script>
 </html>

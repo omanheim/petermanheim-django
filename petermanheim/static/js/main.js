@@ -1,4 +1,4 @@
-var activeTab = 'news';
+var activeTab = 'none';
 
 sizeSlider();
 

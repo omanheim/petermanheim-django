@@ -19,7 +19,7 @@
       Peter Manheim is a drummer and percussionist from Evanston, Illinois. In 2012, he completed his bachelors degree in music at Oberlin Conservatory. While at school, he was fortunate to study with drumming masters Billy Hart and Jamey Haddad, both of whom became extremely important mentors to him.  Upon completing school, Peter moved to Brazil, where he spent six months traveling, performing, and studying Brazilian drums and percussion.<br><br>
       Peter is currently based in Chicago where he performs regularly in a variety of music styles. Peter tours nationally and internationally with bands including <a href='http://www.organyank.com' style='color:white;text-decoration:none;' target='_blank'><b>Organ Yank</b></a>, <a href='http://www.samuelmoesching.com/trio' style='color:white;text-decoration:none;' target='_blank'><b>The New Samuel M&#246sching Trio</b></a>, and <a href='http://www.thcjazz.com' style='color:white;text-decoration:none;' target='_blank'><b>The Terry Hsieh Collective</b></a>. 
     </div>
-    <div class='tab' id='newsTab'>{{ news }}</div>
+    <div class='tab' id='newsTab'></div>
     <div class='tab' id='liveTab'>
       <b>Live</b><br><br>
 
@@ -73,6 +73,13 @@
 </div>
 </body>
 </html>
-
 <script type='text/javascript' src='/static/js/jquery-latest.min.js'></script>
 <script src="/static/js/main.js"></script>
+<script>
+  var news = '{{ news }}';
+  window.addEventListener('load', function() {
+    var decodedNews = decodeURIComponent(news);
+    document.getElementById('newsTab').innerText = decodedNews;
+  });
+</script>
+
