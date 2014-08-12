@@ -6,3 +6,6 @@ class Gig(models.Model):
     date=models.DateTimeField()
     location=models.CharField(max_length=140)
     band=models.CharField(max_length=240)
+
+class News(models.Model):
+    news=models.TextField()
