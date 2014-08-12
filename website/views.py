@@ -38,7 +38,7 @@ def gigs(request):
             gig.date = datetime.strftime(gig.date, '%b %d')
         else:
             gig.date = datetime.strftime(gig.date, '%b %d,  %I:%M %p')
-    news = News.objects.all()[:1].news
+    news = News.objects.get(pk=1).news
     return render(request, 'gigs.html', {'gigs': gigs, 'news': news})
 
 def addGig(request):
