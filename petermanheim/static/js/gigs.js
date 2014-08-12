@@ -22,7 +22,7 @@ $(document).on('click', '#edit-news-btn', function() {
 });
 
 $(document).on('click', '#save-news', function() {
-  $.post('/saveNews', {'news': $('#news-content').text()}, function() {
+  $.post('/saveNews', {'news': document.getElementById('news-content').innerText}, function() {
     $('#edit-news').hide();
     $('#view-gigs').show();
   });
