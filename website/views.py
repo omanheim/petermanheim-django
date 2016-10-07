@@ -21,9 +21,8 @@ def index(request):
             d = datetime.strftime(gig.date, '%d').lstrip('0')
             tm = datetime.strftime(gig.date, '%I:%M %p').lstrip('0')
             gig.date = m + '/' + d + ' | ' + tm
-    rand = random.randint(1,2)
     gigs = sorted(gigs, key=lambda gig: gig.epoch)
-    backgroundImage = "/static/images/whitet.jpg" if rand == 1 else "/static/images/noblur.jpg"
+    backgroundImage = "/static/images/noblur.jpg"
     news = News.objects.get(pk=1).news
     return render(request, 'homepage.html', {'gigs': gigs, 'bgimg': backgroundImage, 'news': news})
 
